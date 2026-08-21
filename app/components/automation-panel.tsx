@@ -121,9 +121,9 @@ export default function AutomationPanel() {
   const pressed = phase === "clicking";
 
   return (
-    <div className="raised flex h-full flex-col rounded-[14px] p-5">
+    <div className="raised flex h-full flex-col rounded-[12px] p-3.5 sm:rounded-[14px] sm:p-5">
       {/* panel header */}
-      <div className="mb-5 flex items-center justify-between">
+      <div className="mb-3.5 flex items-center justify-between sm:mb-5">
         <span className="font-mono text-[11.5px] text-ink-muted">
           automation.txt
         </span>
@@ -137,10 +137,10 @@ export default function AutomationPanel() {
 
       {/* rule stage — fixed height so nothing reflows between phases.
           both layers are absolutely positioned and cross-fade. */}
-      <div className="relative min-h-[210px] flex-1 text-left">
+      <div className="relative min-h-[168px] flex-1 text-left sm:min-h-[210px]">
         {/* typing layer */}
         <p
-          className="absolute inset-0 text-left text-[1.4rem] font-medium leading-[1.34] tracking-[-0.022em] text-foreground"
+          className="absolute inset-0 text-left text-[1.0625rem] font-medium leading-[1.36] tracking-[-0.022em] text-foreground sm:text-[1.4rem] sm:leading-[1.34]"
           style={{
             opacity: isResolved ? 0 : 1,
             pointerEvents: "none",
@@ -160,7 +160,7 @@ export default function AutomationPanel() {
 
         {/* resolved layer */}
         <p
-          className="absolute inset-0 flex flex-wrap content-start items-center justify-start gap-x-2.5 gap-y-3 text-left text-[1.4rem] font-medium leading-[1.34] tracking-[-0.022em] text-foreground"
+          className="absolute inset-0 flex flex-wrap content-start items-center justify-start gap-x-2 gap-y-2 text-left text-[1.0625rem] font-medium leading-[1.36] tracking-[-0.022em] text-foreground sm:gap-x-2.5 sm:gap-y-3 sm:text-[1.4rem] sm:leading-[1.34]"
           style={{
             opacity: isResolved ? 1 : 0,
             pointerEvents: "none",
@@ -207,7 +207,7 @@ export default function AutomationPanel() {
       </div>
 
       {/* deploy button — presses itself once typing completes */}
-      <div className="mt-5 flex justify-start">
+      <div className="mt-4 flex justify-start sm:mt-5">
         <button
           type="button"
           tabIndex={-1}
@@ -233,7 +233,7 @@ export default function AutomationPanel() {
       </div>
 
       {/* result row — space is always reserved, the row slides in */}
-      <div className="mt-5 min-h-[64px] border-t border-line pt-4">
+      <div className="mt-4 min-h-[68px] border-t border-line pt-3.5 sm:mt-5 sm:min-h-[64px] sm:pt-4">
         <div
           className="flex items-start gap-3 text-left"
           style={{
@@ -267,7 +267,7 @@ export default function AutomationPanel() {
               Bottleneck flagged, downtime and cycle tim…
             </p>
           </div>
-          <span className="shrink-0 whitespace-nowrap font-mono text-[11px] text-ink-faint">
+          <span className="hidden shrink-0 whitespace-nowrap font-mono text-[11px] text-ink-faint sm:inline">
             bottleneck · 210ms
           </span>
         </div>
